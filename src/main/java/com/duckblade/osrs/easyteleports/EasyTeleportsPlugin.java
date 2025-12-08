@@ -1,10 +1,14 @@
 package com.duckblade.osrs.easyteleports;
 
 import com.duckblade.osrs.easyteleports.replacers.*;
+import com.duckblade.osrs.easyteleports.replacers.diary.*;
+import com.duckblade.osrs.easyteleports.replacers.jewellery.*;
+import com.duckblade.osrs.easyteleports.replacers.other.*;
+import com.duckblade.osrs.easyteleports.replacers.quest.*;
+import com.duckblade.osrs.easyteleports.replacers.skillcapes.*;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-import com.google.inject.Binder;
 import com.google.inject.Provides;
 
 import java.util.List;
@@ -76,60 +80,76 @@ public class EasyTeleportsPlugin extends Plugin
 	@Inject
 	private Set<Replacer> replacers;
 
-	@Provides
-	public Set<Replacer> provideReplacers(
-		DiaryCape diaryCape,
-		DrakansMedallion drakansMedallion,
-		KharedstMemoirs kharedstMemoirs,
-		PharaohSceptre pharaohSceptre,
-		RingOfDueling ringOfDueling,
-		RingOfShadows ringOfShadows,
-		SlayerRing slayerRing,
-		XericsTalisman xericsTalisman,
-		NecklaceOfPassage necklaceOfPassage,
-		PendantOfAtes pendantOfAtes,
-		DigsitePendant digsitePendant,
-		BurningAmulet burningAmulet,
-		EnchantedLyre enchantedLyre,
-		GhommalsHilt ghommalsHilt,
-		Camulet camulet,
-		EternalTeleportCrystal eternalTeleportCrystal,
-		GrandSeedPod grandSeedPod,
-		RadasBlessing radasBlessing,
-		KaramjaGloves karamjaGloves,
-		MorytaniaLegs morytaniaLegs,
-		DesertAmulet desertAmulet,
-		RingOfTheElements ringOfTheElements,
-		GiantsoulAmulet giantsoulAmulet,
-		MaxCape maxCape
-	)
-	{
-		return ImmutableSet.of(
-			diaryCape,
-			drakansMedallion,
-			kharedstMemoirs,
-			pharaohSceptre,
-			ringOfDueling,
-			ringOfShadows,
-			slayerRing,
-			xericsTalisman,
-			necklaceOfPassage,
-			pendantOfAtes,
-			digsitePendant,
-			burningAmulet,
-			enchantedLyre,
-			ghommalsHilt,
-			camulet,
-			eternalTeleportCrystal,
-			grandSeedPod,
-			radasBlessing,
-			karamjaGloves,
-			morytaniaLegs,
-			desertAmulet,
-			ringOfTheElements,
-			giantsoulAmulet,
-			maxCape
-		);
+    @Provides
+    public Set<Replacer> provideReplacers(
+            RingOfDueling ringOfDueling,
+            SlayerRing slayerRing,
+            NecklaceOfPassage necklaceOfPassage,
+            DigsitePendant digsitePendant,
+            GamesNecklace gamesNecklace,
+            BurningAmulet burningAmulet,
+            SkillsNecklace skillsNecklace,
+            CombatBracelet combatBracelet,
+            RingOfWealth ringOfWealth,
+            AmuletOfGlory amuletOfGlory,
+            SkillCapes skillCapes,
+            RadasBlessing radasBlessing,
+            KaramjaGloves karamjaGloves,
+            MorytaniaLegs morytaniaLegs,
+            DesertAmulet desertAmulet,
+            ArdougneCloak ardougneCloak,
+            DiaryCape diaryCape,
+            KharedstMemoirs kharedstMemoirs,
+            DrakansMedallion drakansMedallion,
+            RingOfShadows ringOfShadows,
+            EnchantedLyre enchantedLyre,
+            Camulet camulet,
+            EternalTeleportCrystal eternalTeleportCrystal,
+            PharaohSceptre pharaohSceptre,
+            XericsTalisman xericsTalisman,
+            PendantOfAtes pendantOfAtes,
+            GhommalsHilt ghommalsHilt,
+            GrandSeedPod grandSeedPod,
+            RingOfTheElements ringOfTheElements,
+            GiantsoulAmulet giantsoulAmulet,
+            AncientShard ancientShard,
+            DiskOfReturning diskOfReturning
+    )
+    {
+        return ImmutableSet.of(
+                ringOfDueling,
+                slayerRing,
+                necklaceOfPassage,
+                digsitePendant,
+                gamesNecklace,
+                burningAmulet,
+                skillsNecklace,
+                combatBracelet,
+                ringOfWealth,
+                amuletOfGlory,
+                skillCapes,
+                radasBlessing,
+                karamjaGloves,
+                morytaniaLegs,
+                desertAmulet,
+                ardougneCloak,
+                diaryCape,
+                kharedstMemoirs,
+                drakansMedallion,
+                ringOfShadows,
+                enchantedLyre,
+                camulet,
+                eternalTeleportCrystal,
+                pharaohSceptre,
+                xericsTalisman,
+                pendantOfAtes,
+                ghommalsHilt,
+                grandSeedPod,
+                ringOfTheElements,
+                giantsoulAmulet,
+                ancientShard,
+                diskOfReturning
+        );
 	}
 
 	@Override

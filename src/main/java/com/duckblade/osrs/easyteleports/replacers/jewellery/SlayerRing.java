@@ -1,7 +1,8 @@
-package com.duckblade.osrs.easyteleports.replacers;
+package com.duckblade.osrs.easyteleports.replacers.jewellery;
 
 import com.duckblade.osrs.easyteleports.EasyTeleportsConfig;
 import com.duckblade.osrs.easyteleports.TeleportReplacement;
+import com.duckblade.osrs.easyteleports.replacers.Replacer;
 import com.google.common.collect.ImmutableList;
 
 import java.util.ArrayList;
@@ -28,6 +29,9 @@ public class SlayerRing implements Replacer
 	{
 		this.enabled = config.enableSlayerRing();
 
+		// More specific/longer replacements should be placed higher; you can run into sub-string replacement issues if
+		// one replacement contains the same string as another, for example:
+		// "Teleport to the Stronghold Slayer Cave" and "Stronghold"
 		replacements.clear();
 		replacements.add(new TeleportReplacement("Teleport to the Stronghold Slayer Cave", config.replacementSlayerStronghold()));
 		replacements.add(new TeleportReplacement("Stronghold", config.replacementSlayerStronghold()));
