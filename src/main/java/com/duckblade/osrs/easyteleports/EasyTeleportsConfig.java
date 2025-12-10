@@ -27,31 +27,29 @@ public interface EasyTeleportsConfig extends Config {
     public static final int POSITION_COMBAT_BRACELET = BASE + 10 * STEP;
     public static final int POSITION_RING_OF_WEALTH = BASE + 11 * STEP;
     public static final int POSITION_AMULET_OF_GLORY = BASE + 12 * STEP;
-    public static final int POSITION_CONSTRUCTION_CAPE = BASE + 13 * STEP;
-    public static final int POSITION_FISHING_CAPE = BASE + 14 * STEP;
-    public static final int POSITION_HUNTER_CAPE = BASE + 15 * STEP;
-    public static final int POSITION_MAX_CAPE = BASE + 16 * STEP;
-    public static final int POSITION_RADAS_BLESSING = BASE + 17 * STEP;
-    public static final int POSITION_KARAMJA_GLOVES = BASE + 18 * STEP;
-    public static final int POSITION_MORYTANIA_LEGS = BASE + 19 * STEP;
-    public static final int POSITION_DESERT_AMULET = BASE + 20 * STEP;
-    public static final int POSITION_ARDOUGNE_CLOAK = BASE + 21 * STEP;
-    public static final int POSITION_DIARY_CAPE = BASE + 22 * STEP;
-    public static final int POSITION_KHAREDSTS_MEMOIRS = BASE + 23 * STEP;
-    public static final int POSITION_DRAKANS = BASE + 24 * STEP;
-    public static final int POSITION_RING_OF_SHADOWS = BASE + 25 * STEP;
-    public static final int POSITION_ENCHANTED_LYRE = BASE + 26 * STEP;
-    public static final int POSITION_CAMULET = BASE + 27 * STEP;
-    public static final int POSITION_ETERNAL_TELEPORT_CRYSTAL = BASE + 28 * STEP;
-    public static final int POSITION_PHARAOHS_SCEPTRE = BASE + 29 * STEP;
-    public static final int POSITION_XERICS_TALISMAN = BASE + 30 * STEP;
-    public static final int POSITION_PENDANT_OF_ATES = BASE + 31 * STEP;
-    public static final int POSITION_GHOMMALS_HILT = BASE + 32 * STEP;
-    public static final int POSITION_GRAND_SEED_POD = BASE + 33 * STEP;
-    public static final int POSITION_RING_OF_THE_ELEMENTS = BASE + 34 * STEP;
-    public static final int POSITION_GIANTSOUL_AMULET = BASE + 35 * STEP;
-    public static final int POSITION_ANCIENT_SHARD = BASE + 36 * STEP;
-    public static final int POSITION_DISK_OF_RETURNING = BASE + 37 * STEP;
+    public static final int POSITION_MAX_CAPE = BASE + 13 * STEP;
+    public static final int POSITION_RADAS_BLESSING = BASE + 14 * STEP;
+    public static final int POSITION_KARAMJA_GLOVES = BASE + 15 * STEP;
+    public static final int POSITION_MORYTANIA_LEGS = BASE + 16 * STEP;
+    public static final int POSITION_DESERT_AMULET = BASE + 17 * STEP;
+    public static final int POSITION_ARDOUGNE_CLOAK = BASE + 18 * STEP;
+    public static final int POSITION_DIARY_CAPE = BASE + 19 * STEP;
+    public static final int POSITION_KHAREDSTS_MEMOIRS = BASE + 20 * STEP;
+    public static final int POSITION_DRAKANS = BASE + 21 * STEP;
+    public static final int POSITION_RING_OF_SHADOWS = BASE + 22 * STEP;
+    public static final int POSITION_ENCHANTED_LYRE = BASE + 23 * STEP;
+    public static final int POSITION_CAMULET = BASE + 24 * STEP;
+    public static final int POSITION_ETERNAL_TELEPORT_CRYSTAL = BASE + 25 * STEP;
+    public static final int POSITION_PHARAOHS_SCEPTRE = BASE + 26 * STEP;
+    public static final int POSITION_XERICS_TALISMAN = BASE + 27 * STEP;
+    public static final int POSITION_PENDANT_OF_ATES = BASE + 28 * STEP;
+    public static final int POSITION_GHOMMALS_HILT = BASE + 29 * STEP;
+    public static final int POSITION_GRAND_SEED_POD = BASE + 30 * STEP;
+    public static final int POSITION_RING_OF_THE_ELEMENTS = BASE + 31 * STEP;
+    public static final int POSITION_GIANTSOUL_AMULET = BASE + 32 * STEP;
+    public static final int POSITION_ANCIENT_SHARD = BASE + 33 * STEP;
+    public static final int POSITION_DISK_OF_RETURNING = BASE + 34 * STEP;
+    public static final int POSITION_SAILORS_AMULET = BASE + 35 * STEP;
 
     // General plugin options
     @ConfigSection(
@@ -959,6 +957,17 @@ public interface EasyTeleportsConfig extends Config {
             position = POSITION_MAX_CAPE + 18
     )
     default String replacementMaxCapePrifddinas() {
+        return "";
+    }
+
+    @ConfigItem(
+            keyName = "replacementMaxCapePandemonium",
+            name = "The Pandemonium",
+            description = "Replace The Pandemonium teleport location name.",
+            section = SECTION_MAX_CAPE,
+            position = POSITION_MAX_CAPE + 19
+    )
+    default String replacementMaxCapePandemonium() {
         return "";
     }
 
@@ -2251,6 +2260,59 @@ public interface EasyTeleportsConfig extends Config {
             position = POSITION_DISK_OF_RETURNING + 2
     )
     default String replacementDiskOfReturningBlackout() {
+        return "";
+    }
+
+    // Sailors' amulet
+    @ConfigItem(
+            section = SECTION_ENABLE_FLAGS,
+            keyName = "enableSailorsAmulet",
+            name = "Sailors' amulet",
+            description = "Replace teleport entries on the Sailors' amulet teleport with new names.",
+            position = POSITION_FLAGS + (POSITION_SAILORS_AMULET / 100)
+    )
+    default boolean enableSailorsAmulet() {
+        return false;
+    }
+
+    @ConfigSection(
+            name = "Sailors' amulet",
+            description = "Replacement text for the Disk of returning teleport location names.",
+            position = POSITION_SAILORS_AMULET,
+            closedByDefault = true
+    )
+    String SECTION_SAILORS_AMULET = "sectionSailorsAmulet";
+
+    @ConfigItem(
+            keyName = "replacementSailorsPandemonium",
+            name = "The Pandemonium ",
+            description = "Replace The Pandemonium teleport location name.",
+            section = SECTION_SAILORS_AMULET,
+            position = POSITION_SAILORS_AMULET + 1
+    )
+    default String replacementSailorsPandemonium() {
+        return "";
+    }
+
+    @ConfigItem(
+            keyName = "replacementSailorsPortRobers",
+            name = "Port Roberts ",
+            description = "Replace Port Roberts teleport location name.",
+            section = SECTION_SAILORS_AMULET,
+            position = POSITION_SAILORS_AMULET + 2
+    )
+    default String replacementSailorsPortRobers() {
+        return "";
+    }
+
+    @ConfigItem(
+            keyName = "replacementSailorsDeepfinPoint",
+            name = "Deepfin Point ",
+            description = "Replace Deepfin Point teleport location name.",
+            section = SECTION_SAILORS_AMULET,
+            position = POSITION_SAILORS_AMULET + 3
+    )
+    default String replacementSailorsDeepfinPoint() {
         return "";
     }
 }
