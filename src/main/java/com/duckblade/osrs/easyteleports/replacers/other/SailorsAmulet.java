@@ -35,8 +35,8 @@ public class SailorsAmulet implements Replacer
 		replacements.clear();
 		replacements.add(new TeleportReplacement("The Pandemonium", config.replacementSailorsPandemonium()));
         replacements.add(new TeleportReplacement("The Pandemonium.", config.replacementSailorsPandemonium()));
-		replacements.add(new TeleportReplacement("Port Roberts", config.replacementSailorsPortRobers()));
-        replacements.add(new TeleportReplacement("Port Roberts.", config.replacementSailorsPortRobers()));
+		replacements.add(new TeleportReplacement("Port Roberts", config.replacementSailorsPortRoberts()));
+        replacements.add(new TeleportReplacement("Port Roberts.", config.replacementSailorsPortRoberts()));
 		replacements.add(new TeleportReplacement("Deepfin Point", config.replacementSailorsDeepfinPoint()));
         replacements.add(new TeleportReplacement("Deepfin Point.", config.replacementSailorsDeepfinPoint()));
 	}

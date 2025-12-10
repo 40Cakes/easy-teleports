@@ -2295,13 +2295,13 @@ public interface EasyTeleportsConfig extends Config {
     }
 
     @ConfigItem(
-            keyName = "replacementSailorsPortRobers",
+            keyName = "replacementSailorsPortRoberts",
             name = "Port Roberts ",
             description = "Replace Port Roberts teleport location name.",
             section = SECTION_SAILORS_AMULET,
             position = POSITION_SAILORS_AMULET + 2
     )
-    default String replacementSailorsPortRobers() {
+    default String replacementSailorsPortRoberts() {
         return "";
     }
 
