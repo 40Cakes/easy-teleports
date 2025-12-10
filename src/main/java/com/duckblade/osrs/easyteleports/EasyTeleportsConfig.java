@@ -2277,7 +2277,7 @@ public interface EasyTeleportsConfig extends Config {
 
     @ConfigSection(
             name = "Sailors' amulet",
-            description = "Replacement text for the Disk of returning teleport location names.",
+            description = "Replacement text for the Sailors' amulet teleport location names.",
             position = POSITION_SAILORS_AMULET,
             closedByDefault = true
     )
